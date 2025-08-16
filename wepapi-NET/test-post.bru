@@ -1,0 +1,20 @@
+meta {
+  name: test-post
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5098/WeatherForecast
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "date": "2025-08-27",
+      "temperatureC": 16,
+      "temperatureF": 59,
+      "summary": "Sweltering+plus"
+    }
+}
