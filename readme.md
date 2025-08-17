@@ -92,3 +92,24 @@ http://localhost:5098/api/weatherforecast/get/theweather
 http://localhost:5098/api/weatherforecast/getfull
 ```
 
+## Middleware
+- IMPORTANT the order in the middleware:
+### - ExcemptionHandler
+### - HSTS
+### - HttpRedirection
+### - Static Files
+### - Routing
+### - CORS
+### - Authentication
+### - "Custom Middlewares"
+### - Endpoint
+
+- The Middleware are eh "Use....()" as example in Program.cs files:
+```
+app.UseSwagger();
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.UseWelcomePage();
+```
+- I just added app.UseWelcomePage(). This will show some html in the root.
+
