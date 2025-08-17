@@ -1,3 +1,7 @@
+## API with .NET
+
+#### I hope this repository can serve as a reference for creating APIs using .NET
+
 
 ## Installing
 - Installing the template with the controllers.
@@ -14,6 +18,7 @@ dotnet run
 http://localhost:5098/WeatherForecast
 ```
 - If this works everything is OK.
+---
 
 ## Post and Delete
 - Creation in controller static date in WeatherForecastController
@@ -39,4 +44,15 @@ http://localhost:5098/WeatherForecast
         return Ok();
     }
 ```
-- Test in
+- Run the api
+```
+dotnet run
+```
+- Test in Bruno, Postman or Insomnia 
+```
+POST
+http://localhost:5098/WeatherForecast
+DELETE
+http://localhost:5098/WeatherForecast/2
+```
+
