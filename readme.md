@@ -56,3 +56,39 @@ DELETE
 http://localhost:5098/WeatherForecast/2
 ```
 
+## Manage Routes
+- New Folder "webapi-NET" is the config of BRUNO (equivalent to Postman)
+- In WeatherForecastController.cs 
+```
+[Route("[controller]")]
+http://localhost:5098/WeatherForecast
+[Route("api/[controller]")]
+http://localhost:5098/api/WeatherForecast
+```
+- Also the routing in the action/functions
+```
+[Route("api/[controller]")]
+    [HttpGet(Name = "GetWeatherForecast")]
+    [Route("get/weatherforecast")]
+    [Route("get/theweather")]
+    public IEnumerable<WeatherForecast> Get()
+    {
+        return ListWeatherForecast;
+    }
+http://localhost:5098/api/weatherforecast/get/weatherforecast
+or
+http://localhost:5098/api/weatherforecast/get/theweather
+```
+- IMPORTANT is possible to add more than 1 Route to get the same result. 
+- Other way is using [action] this will use the name of method in this case GetFull
+```
+[Route("api/[controller]")]
+    [HttpGet]
+    [Route("[action]")]
+    public IEnumerable<WeatherForecast> Getfull()
+    {
+        return ListWeatherForecast;
+    }
+http://localhost:5098/api/weatherforecast/getfull
+```
+
